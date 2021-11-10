@@ -19,15 +19,18 @@
     </bean>
 
     <bean id="modelBean"
-    class="ru.com.ibs.homerwork3.Model">
+    class="ru.com.ibs.homerwork3.Model"
+    scope="prototype">
         <property name="carsList" >  <list>
                                         <ref bean="carDiselBean" />
                                         <ref bean="carPetrolBean" />
                                         <ref bean="carElectroBean" />
                                     </list>
+
         </property>
         <property name="mark" value="${Model.mark}"/>
         <property name="strong" value="${Model.strong}"/>
+
     </bean>
 
 </beans>
