@@ -8,18 +8,29 @@ public class Main {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Model model=context.getBean("modelBean",Model.class);
-        Model model2=context.getBean("modelBean",Model.class);
+//        DiselEngine engine=context.getBean("carDiselBean",DiselEngine.class);
+//        DiselEngine engine2=context.getBean("carDiselBean",DiselEngine.class);
+//
+//        System.out.println(engine.getMove());
+//        System.out.println(engine2.getMove());
 
-        boolean comprasion = model==model2;
-        System.out.println(comprasion);
 
+
+//        Model model=context.getBean("modelBean",Model.class);
+//        Model model2=context.getBean("modelBean",Model.class);
+//
+//        boolean comprasion = model==model2;
+//        System.out.println(comprasion);
+//
+//        model.driveACar();
+//        model2.driveACar();
+//
+//        System.out.println(model.getMark());
+//        System.out.println(model.getStrong());
+
+
+        Model model = context.getBean("modelBean",Model.class);
         model.driveACar();
-        model2.driveACar();
-
-        System.out.println(model.getMark());
-        System.out.println(model.getStrong());
-
         context.close();
     }
 }

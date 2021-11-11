@@ -7,30 +7,28 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="ru.com.ibs.homerwork3"/>
     <context:property-placeholder location="classpath:model.properties"/>
-    <bean id="carDiselBean"
-          class="ru.com.ibs.homerwork3.DiselEngine">
-    </bean>
-    <bean id="carPetrolBean"
-          class="ru.com.ibs.homerwork3.PetrolEngine">
-    </bean>
-    <bean id="carElectroBean"
-          class="ru.com.ibs.homerwork3.ElectroEngine">
-    </bean>
+<!--    <bean id="carDiselBean"-->
+<!--          class="ru.com.ibs.homerwork3.DiselEngine"-->
+<!--    init-method="doMyInitMetod"-->
+<!--    destroy-method="doMyDestroyMetod"-->
+<!--    scope="prototype">-->
+<!--    </bean>-->
 
-    <bean id="modelBean"
-    class="ru.com.ibs.homerwork3.Model"
-    scope="prototype">
-        <property name="carsList" >  <list>
-                                        <ref bean="carDiselBean" />
-                                        <ref bean="carPetrolBean" />
-                                        <ref bean="carElectroBean" />
-                                    </list>
+<!--    <bean id="modelBean"-->
+<!--    class="ru.com.ibs.homerwork3.Model"-->
+<!--    scope="prototype">-->
+<!--        <property name="carsList" >  <list>-->
+<!--                                        <ref bean="carDiselBean" />-->
+<!--                                        <ref bean="carPetrolBean" />-->
+<!--                                        <ref bean="carElectroBean" />-->
+<!--                                    </list>-->
 
-        </property>
-        <property name="mark" value="${Model.mark}"/>
-        <property name="strong" value="${Model.strong}"/>
+<!--        </property>-->
+<!--        <property name="mark" value="${Model.mark}"/>-->
+<!--        <property name="strong" value="${Model.strong}"/>-->
 
-    </bean>
+<!--    </bean>-->
 
 </beans>

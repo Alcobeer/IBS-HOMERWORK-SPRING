@@ -1,26 +1,42 @@
 package ru.com.ibs.homerwork3;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component("modelBean")
 public class Model {
-private List<Cars> carsList=new ArrayList<>();
+
+//private List<Cars> carsList=new ArrayList<>();
+    private DiselEngine diselEngine ;
+    private PetrolEngine petrolEngine;
+    private ElectroEngine electroEngine;
 private String mark;
 private int strong;
 
 
 
-    public Model(){}
-
-    public void setCarsList(List<Cars> carsList) {
-        this.carsList = carsList;
+   // public Model(){}
+   @Autowired
+    public Model(DiselEngine diselEngine, PetrolEngine petrolEngine, ElectroEngine electroEngine) {
+        this.diselEngine = diselEngine;
+        this.petrolEngine = petrolEngine;
+        this.electroEngine = electroEngine;
     }
 
-    public List<Cars> getCarsList() {
-        return carsList;
-    }
+
+
+
+//   public void setCarsList(List<Cars> carsList) {
+//        this.carsList = carsList;
+//    }
+//
+//    public List<Cars> getCarsList() {
+//        return carsList;
+//    }
 
     public String getMark() {
         return mark;
@@ -39,11 +55,13 @@ private int strong;
     }
 
     public void driveACar(){
-       // System.out.println( "Car drive on " + carsList);
-        for (Cars car:carsList){
-            System.out.println("Car drive on " + car.getMove());
-        }
 
-       // System.out.println("Car drive on "+ car.getMove());
+//        for (Cars car:carsList){
+//            System.out.println("Car drive on " + car.getMove());
+//        }
+
+        System.out.println("Car drive on "+ diselEngine.getMove());
+        System.out.println("Car drive on "+ petrolEngine.getMove());
+        System.out.println("Car drive on "+ electroEngine.getMove());
     }
 }
