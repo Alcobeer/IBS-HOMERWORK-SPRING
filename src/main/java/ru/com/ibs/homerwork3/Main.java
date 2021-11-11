@@ -31,6 +31,11 @@ public class Main {
 
         Model model = context.getBean("modelBean",Model.class);
         model.driveACar();
+        System.out.println(model.getMark());
+        System.out.println(model.getStrong());
+        DiselEngine diselEngine=context.getBean("carDiselBean",DiselEngine.class);
+        DiselEngine diselEngine2=context.getBean("carDiselBean",DiselEngine.class);
+        System.out.println(diselEngine2==diselEngine);
         context.close();
     }
 }

@@ -2,6 +2,8 @@ package ru.com.ibs.homerwork3;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,22 +13,23 @@ import java.util.List;
 public class Model {
 
 //private List<Cars> carsList=new ArrayList<>();
-    private DiselEngine diselEngine ;
-    private PetrolEngine petrolEngine;
-    private ElectroEngine electroEngine;
-private String mark;
-private int strong;
 
 
+    private Cars cars;
+    private Cars cars2;
 
-   // public Model(){}
-   @Autowired
-    public Model(DiselEngine diselEngine, PetrolEngine petrolEngine, ElectroEngine electroEngine) {
-        this.diselEngine = diselEngine;
-        this.petrolEngine = petrolEngine;
-        this.electroEngine = electroEngine;
+    @Value("${Model.mark}")
+    private String mark;
+    @Value("${Model.strong}")
+    private int strong;
+
+    @Autowired
+    public Model(@Qualifier("carDiselBean")Cars cars, @Qualifier("carElectroBean") Cars cars2) {
+        this.cars = cars;
+        this.cars2 = cars2;
     }
 
+// public Model(){}
 
 
 
@@ -60,8 +63,7 @@ private int strong;
 //            System.out.println("Car drive on " + car.getMove());
 //        }
 
-        System.out.println("Car drive on "+ diselEngine.getMove());
-        System.out.println("Car drive on "+ petrolEngine.getMove());
-        System.out.println("Car drive on "+ electroEngine.getMove());
+        System.out.println("Car drive on "+ cars.getMove());
+        System.out.println("Car drive on "+ cars2.getMove());
     }
 }
