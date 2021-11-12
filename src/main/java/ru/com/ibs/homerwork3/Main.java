@@ -1,12 +1,14 @@
 package ru.com.ibs.homerwork3;
 
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        AnnotationConfigApplicationContext context=
+                new AnnotationConfigApplicationContext(SpringConfig.class);
 
 //        DiselEngine engine=context.getBean("carDiselBean",DiselEngine.class);
 //        DiselEngine engine2=context.getBean("carDiselBean",DiselEngine.class);
