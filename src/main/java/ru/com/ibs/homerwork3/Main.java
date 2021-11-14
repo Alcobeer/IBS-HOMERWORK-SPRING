@@ -2,7 +2,7 @@ package ru.com.ibs.homerwork3;
 
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.com.ibs.homerwork3.config.SpringConfig;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,13 +31,13 @@ public class Main {
 //        System.out.println(model.getStrong());
 
 
-        Model model = context.getBean("modelBean",Model.class);
-        model.driveACar();
-        System.out.println(model.getMark());
-        System.out.println(model.getStrong());
-        DiselEngine diselEngine=context.getBean("carDiselBean",DiselEngine.class);
-        DiselEngine diselEngine2=context.getBean("carDiselBean",DiselEngine.class);
-        System.out.println(diselEngine2==diselEngine);
-        context.close();
+//        Model model = context.getBean("modelBean",Model.class);
+//        model.driveACar();
+//        System.out.println(model.getMark());
+//        System.out.println(model.getStrong());
+//        DiselEngine diselEngine=context.getBean("carDiselBean",DiselEngine.class);
+//        DiselEngine diselEngine2=context.getBean("carDiselBean",DiselEngine.class);
+//        System.out.println(diselEngine2==diselEngine);
+//        context.close();
     }
 }
