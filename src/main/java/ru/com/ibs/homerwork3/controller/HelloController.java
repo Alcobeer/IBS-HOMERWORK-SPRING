@@ -26,6 +26,8 @@ public class HelloController {
             break;
             case "div":model.addAttribute("doing",a/(double)b);
             break;
+            default: model.addAttribute("doing", 0);
+            break;
 
         }
         //model.addAttribute("message", "Hello "+name+" "+surname);
